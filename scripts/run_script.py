@@ -9,7 +9,7 @@ class RunScriptServer:
     rospy.init_node("run_script_node")
     self.seed=SeedCommand()
 
-    self.seed.open_port("/dev/ttyACM2",115200)
+    self.seed.open_port("/dev/ttyACM0",115200)
     self.seed.open_com()
 
     self.server = rospy.Service('run_script', RunScript, self.callback)
